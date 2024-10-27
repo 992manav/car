@@ -9,7 +9,7 @@ const PartCard = ({ part }) => {
           <img
             src={part.image}
             alt={part.name}
-            className="w-full h-80 rounded mb-4 object-cover" // Added object-cover for better image handling
+            className="w-full h-80 rounded mb-4 object-contain" // Added object-cover for better image handling
           />
           {/* "Add to Cart" text with icon */}
           <div className="absolute inset-0 flex items-center justify-center text-white bg-red-500 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded">

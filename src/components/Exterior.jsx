@@ -51,7 +51,7 @@ const Exterior = ({ searchQuery }) => {
             <h1 className="text-3xl font-bold text-black">Exteriors</h1>
             <h2 className="border-2 w-36 mr-2 border-red-500 rounded-full"></h2>
           </div>
-          <div className="grid grid-cols-4 gap-3 justify-evenly pb-10">
+          <div className="grid grid-cols-3 gap-3 justify-evenly pb-10">
             {parts.map((part) => {
               if (part.where === "exterior") {
                 return (

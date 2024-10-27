@@ -13,7 +13,9 @@ const Parts = () => {
     const fetchPartData = async () => {
       try {
         const response = await fetch(
-          `https://carretailerbackend.vercel.app/api/part/gettypes/${types}`
+          `https://carretailerbackend.vercel.app/api/part/gettypes/${types
+            .toLowerCase()
+            .replace(/\s+/g, "")}`
         ); // Added quotes around the URL
         if (!response.ok) {
           throw new Error("Network response was not ok");

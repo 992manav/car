@@ -9,6 +9,7 @@ import AllParts from "./pages/AllParts.jsx";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Part from "./components/Part.jsx";
 import Parts from "./components/Parts.jsx";
+import Cart from "./pages/Cart.jsx";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/part/:types/:model" element={<Part />} />
           <Route path="/parts/:types" element={<Parts />} />
           <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         <Footer />
       </BrowserRouter>
