@@ -55,7 +55,7 @@ const Parts = () => {
         {types.toUpperCase()} Details
       </h1>
       {partData.length > 0 ? (
-        <div className="bg-black w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 ">
+        <div className=" w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 ">
           {partData.map((part) => (
             <PartCard key={part._id} part={part} /> // Use the PartCard component
           ))}

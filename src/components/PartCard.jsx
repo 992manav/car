@@ -1,21 +1,33 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const PartCard = ({ part }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="bg-lightblue-500 hover:bg-deepskyblue-500 transition duration-300 transform hover:scale-105 p-4 text-center">
+    <div className="bg-lightblue-700 hover:bg-deepskyblue-500 transition duration-300 transform hover:scale-105 pb-4 px-2 text-center">
       <div className="relative bg-white rounded shadow-lg w-full max-w-md mb-4 h-full">
         {/* Wrapper for the image and "Add to Cart" text */}
         <div className="relative group">
           <img
             src={part.image}
             alt={part.name}
-            className="w-full h-80 rounded mb-4 object-contain" // Added object-cover for better image handling
+            className="w-full h-60 rounded mb-4 object-cover"
           />
           {/* "Add to Cart" text with icon */}
-          <div className="absolute inset-0 flex items-center justify-center text-white bg-red-500 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded">
-            <i className="fas fa-shopping-cart mr-2"></i>{" "}
-            {/* Shopping cart icon */}
-            Add to Cart
+          <div className="absolute inset-0 flex items-center justify-center space-x-2 text-white bg-red-500 bg-opacity-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded">
+            <button
+              onClick={() => console.log("Shopping cart button clicked")}
+              className="w-10 h-10 bg-red-700 hover:bg-red-800 text-white flex items-center justify-center rounded transition duration-300"
+            >
+              <i className="fas fa-shopping-cart"></i>
+            </button>
+            <button
+              onClick={() => navigate("/detail", { state: { part } })}
+              className="w-10 h-10 bg-red-700 hover:bg-red-800 text-white flex items-center justify-center rounded transition duration-300"
+            >
+              <i className="fas fa-link"></i>
+            </button>
           </div>
         </div>
         <div className="absolute top-3 right-2 bg-red-500 text-white px-2 py-1 rounded">
@@ -24,10 +36,12 @@ const PartCard = ({ part }) => {
           </span>
           <span className="text-2xl">₹{part.price}</span>
         </div>
-        <p className="text-lg m-4 ml-6 text-red-500">
+
+        <p className="bg-aliceblue text-lg mx-4 mt-4 mb-3 text-red-500">
           Model: {part.model.toUpperCase()}
         </p>
-        <h2 className="text-xl text-black font-semibold m-4 tracking-wide">
+
+        <h2 className="bg-aliceblue text-xl text-black font-semibold mx-4 tracking-wide">
           {part.name}
         </h2>
       </div>

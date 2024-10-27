@@ -9,6 +9,9 @@ export default {
         roboto: ['"Roboto"', "sans-serif"],
         worksans: ['"Work Sans"', "sans-serif"],
       },
+      colors: {
+        aliceblue: "#F0F8FF", // Exact color code for aliceblue
+      },
     },
   },
   plugins: [],
