@@ -17,7 +17,7 @@ const AllParts = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white p-6 flex flex-col items-center bg-red-600 rounded-lg">
+    <div className="min-h-screen bg-gradient-to-r from-red-600 to-white text-white p-6 flex flex-col items-center rounded-lg">
       <h1 className="text-5xl font-bold text-center mb-8 text-black">
         All Parts
       </h1>
@@ -27,7 +27,7 @@ const AllParts = () => {
           value={searchQuery}
           onChange={handleSearchChange}
           placeholder="Search by Car model..."
-          className="flex-1 p-3 rounded-l-lg bg-gray-800 text-white text-lg"
+          className="flex-1 p-3 rounded-l-lg bg-black text-white text-lg"
         />
         <button
           onClick={handleSearchClick}

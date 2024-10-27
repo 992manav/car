@@ -21,7 +21,7 @@ const Card = ({ searchQuery, _id, type, image }) => {
   return (
     <div
       onClick={handleClick}
-      className="border border-white shadow-lg rounded-lg text-center w-full transition-transform transform hover:scale-105 hover:shadow-2xl bg-black cursor-pointer "
+      className="border border-white shadow-lg rounded-lg text-center w-full transition-transform transform hover:scale-105 hover:shadow-2xl bg-black cursor-pointer mb-4 "
     >
       <img
         src={image}
