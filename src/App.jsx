@@ -8,6 +8,7 @@ import ContactUs from "./pages/ContactUs";
 import AllParts from "./pages/AllParts.jsx";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Part from "./components/Part.jsx";
+import Parts from "./components/Parts.jsx";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/part/:types" element={<Part />} />
+          <Route path="/part/:types/:model" element={<Part />} />
+          <Route path="/parts/:types" element={<Parts />} />
           <Route path="/contactus" element={<ContactUs />} />
         </Routes>
         <Footer />

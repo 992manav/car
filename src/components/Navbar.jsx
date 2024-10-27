@@ -15,19 +15,19 @@ const Navbar = ({ loggedin }) => {
   const handleMouseLeaveInterior = () => setIsInteriorOpen(false);
 
   const interiorItems = [
-    { label: "Seat Cover", onClick: () => navigate("part/seatcover") },
-    { label: "Car Floor Mats", onClick: () => navigate("part/mats") },
-    { label: "Speakers", onClick: () => navigate("part/speaker") },
-    { label: "Dashcam", onClick: () => navigate("part/dashcam") },
+    { label: "Seat Cover", onClick: () => navigate("parts/seatcover") },
+    { label: "Car Floor Mats", onClick: () => navigate("parts/mats") },
+    { label: "Speakers", onClick: () => navigate("parts/speaker") },
+    { label: "Dashcam", onClick: () => navigate("parts/dashcam") },
   ];
 
   const exteriorItems = [
     {
       label: "Tyre",
-      onClick: () => navigate(`part/tyres`),
+      onClick: () => navigate(`parts/tyres`),
     },
-    { label: "Alloy Wheel", onClick: () => navigate("part/alloywheels") },
-    { label: "Headlight", onClick: () => navigate("part/headlights") },
+    { label: "Alloy Wheel", onClick: () => navigate("parts/alloywheels") },
+    { label: "Headlight", onClick: () => navigate("parts/headlights") },
     // { label: "Car Wraps", onClick: () => navigate("part/carwraps") },
   ];
 

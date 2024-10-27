@@ -17,7 +17,7 @@ async function getExteriorParts() {
   }
 }
 
-const Exterior = () => {
+const Exterior = ({ searchQuery }) => {
   const [parts, setParts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -56,6 +56,7 @@ const Exterior = () => {
               if (part.where === "exterior") {
                 return (
                   <Card
+                    searchQuery={searchQuery}
                     key={part._id}
                     _id={part._id}
                     type={part.type.replace(/\b\w/g, (char) =>

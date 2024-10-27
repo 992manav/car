@@ -16,7 +16,7 @@ async function getInteriorParts() {
   }
 }
 
-const Interior = () => {
+const Interior = ({ searchQuery }) => {
   const [parts, setParts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -55,6 +55,7 @@ const Interior = () => {
               if (part.where === "interior") {
                 return (
                   <Card
+                    searchQuery={searchQuery}
                     key={part._id}
                     _id={part._id}
                     type={part.type.replace(/\b\w/g, (char) =>
