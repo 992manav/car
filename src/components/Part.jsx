@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom"; // Import useHistory
+import { useParams } from "react-router-dom"; // Import useHistory
 import Preloader from "./Preloader";
 import PartCard from "./PartCard"; // Import the new PartCard component
 
 const Part = () => {
   const { types, model } = useParams(); // Extract both types and model from URL parameters
-  const history = useHistory(); // Initialize useHistory
+
   const [partData, setPartData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -47,7 +47,7 @@ const Part = () => {
   return (
     <div className="min-h-screen text-white p-6 flex flex-col items-center bg-gray-400 w-screen">
       <button
-        onClick={() => history.goBack()} // Go back to the previous page
+        // Go back to the previous page
         className="mt-4 p-2 bg-pink-500 text-white rounded"
       >
         Go Back
