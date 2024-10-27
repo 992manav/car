@@ -12,6 +12,7 @@ const AllParts = () => {
 
   const handleSearchClick = () => {
     console.log("Searching for:", searchQuery);
+
     setRenderKey(Date.now()); // Update key to force re-render
   };
 

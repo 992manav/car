@@ -7,7 +7,7 @@ const Card = ({ searchQuery, _id, type, image }) => {
   const handleClick = () => {
     const formattedType = type.replace(/\s+/g, "").toLowerCase();
     const url = searchQuery
-      ? `/part/${formattedType}/${searchQuery}`
+      ? `/part/${formattedType}/${searchQuery.toLowerCase()}`
       : `/parts/${formattedType}`;
 
     // Use navigate for routing
