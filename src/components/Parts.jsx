@@ -50,12 +50,12 @@ const Parts = () => {
   }
 
   return (
-    <div className="min-h-screen text-white p-6 flex flex-col items-center bg-gray-400 w-screen">
+    <div className="min-h-screen text-white p-6 flex flex-col items-center bg-gray-400 w-full">
       <h1 className="text-4xl font-bold mb-4 text-black">
         {types.toUpperCase()} Details
       </h1>
       {partData.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 w-full max-w-screen-lg">
+        <div className="bg-black w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 ">
           {partData.map((part) => (
             <PartCard key={part._id} part={part} /> // Use the PartCard component
           ))}
