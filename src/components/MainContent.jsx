@@ -4,7 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 const MainContent = () => {
   const [displayedText, setDisplayedText] = useState("");
-  const text = "We Provide the Best Solutions for EV Vehicle";
+  const text = "We Provide the Best Solutions for Car Parts";
 
   useEffect(() => {
     let index = 0;
