@@ -37,7 +37,7 @@ const Home = () => {
         <motion.div
           className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/4 w-full max-w-4xl z-10"
           initial={{ x: "100%", y: "80%", scale: 0.5 }}
-          animate={{ x: "-50%", y: "26%", scale: 0.9 }}
+          animate={{ x: "-50%", y: "25%", scale: 0.9 }}
           whileInView={{ scale: 1.1 }} // Scale up when in view
           transition={{ duration: 1, delay: 0.5 }} // Main transition settings
           // Optional: Scale up on hover
