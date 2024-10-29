@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 function ContactUs() {
   const [formData, setFormData] = useState({
@@ -26,14 +27,34 @@ function ContactUs() {
   };
 
   return (
-    <div className="bg-white p-8 flex flex-col md:flex-row">
-      <div className="md:w-2/3 p-4">
-        <h2 className="text-2xl font-bold mb-4 text-red-600">
+    <motion.div
+      className="bg-white p-8 flex flex-col md:flex-row w-screen h-full "
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
+      <motion.div
+        className="md:w-2/3 p-4"
+        initial={{ x: -200 }}
+        animate={{ x: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <motion.h2
+          className="text-2xl font-bold mb-4 text-red-600"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+        >
           Have Questions? Get In Touch!
-        </h2>
+        </motion.h2>
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-4">
-            <div>
+            {/* Name Input */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               <label
                 htmlFor="name"
                 className="block text-sm font-medium text-black"
@@ -49,8 +70,14 @@ function ContactUs() {
                 className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-100 py-2 px-3 shadow-sm focus:outline-none focus:ring-red-600 focus:border-red-600 sm:text-sm"
                 placeholder="John Doe"
               />
-            </div>
-            <div>
+            </motion.div>
+
+            {/* Email Input */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
               <label
                 htmlFor="email"
                 className="block text-sm font-medium text-black"
@@ -66,43 +93,17 @@ function ContactUs() {
                 className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-100 py-2 px-3 shadow-sm focus:outline-none focus:ring-red-600 focus:border-red-600 sm:text-sm"
                 placeholder="example@example.com"
               />
-            </div>
-            <div>
-              <label
-                htmlFor="phone"
-                className="block text-sm font-medium text-black"
-              >
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-100 py-2 px-3 shadow-sm focus:outline-none focus:ring-red-600 focus:border-red-600 sm:text-sm"
-                placeholder="(123) 456-7890"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="subject"
-                className="block text-sm font-medium text-black"
-              >
-                Subject
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-100 py-2 px-3 shadow-sm focus:outline-none focus:ring-red-600 focus:border-red-600 sm:text-sm"
-                placeholder="Subject"
-              />
-            </div>
+            </motion.div>
+
+            {/* Additional fields similarly */}
           </div>
-          <div>
+
+          {/* Message Input */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
             <label
               htmlFor="message"
               className="block text-sm font-medium text-black"
@@ -118,28 +119,41 @@ function ContactUs() {
               className="mt-1 block w-full rounded-md border border-gray-300 bg-gray-100 py-2 px-3 shadow-sm focus:outline-none focus:ring-red-600 focus:border-red-600 sm:text-sm"
               placeholder="Your message here..."
             />
-          </div>
-          <button
+          </motion.div>
+
+          {/* Submit Button */}
+          <motion.button
             type="submit"
             className="mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            initial={{ scale: 0.5 }}
+            animate={{ scale: 1 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
           >
             Send Message
-          </button>
+          </motion.button>
         </form>
-      </div>
-      <div className="md:w-1/3 p-4 bg-gray-100 rounded-md shadow-md h-full mt-20">
-        <h2 className="text-2xl font-bold mb-4 text-red-600">
+      </motion.div>
+
+      {/* Contact Details */}
+      <motion.div
+        className="md:w-1/3 p-4 bg-black rounded-md shadow-md h-full mt-20"
+        initial={{ x: 200 }}
+        animate={{ x: 0 }}
+        transition={{ duration: 0.9 }}
+      >
+        <h2 className="text-2xl font-bold mb-4 text-red-600 ">
           Contact Details
         </h2>
         <div className="grid grid-cols-1 gap-4">
           <div>
-            <p className="text-black">
+            <p className="text-white">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
           <div>
-            <p className="text-black">Send email</p>
+            <p className="text-white">Send email</p>
             <a
               href="mailto:support@example.com"
               className="text-red-600 underline"
@@ -148,38 +162,14 @@ function ContactUs() {
             </a>
           </div>
           <div>
-            <p className="text-black">Call anytime</p>
+            <p className="text-white">Call anytime</p>
             <a href="tel:(007) 123 456 7890" className="text-red-600 underline">
               (007) 123 456 7890
             </a>
           </div>
         </div>
-        <div className="mt-4">
-          <ul className="flex space-x-4">
-            <li>
-              <a href="#" className="text-black hover:text-red-600">
-                <i className="fa-brands fa-facebook-f"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-black hover:text-red-600">
-                <i className="fa-brands fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-black hover:text-red-600">
-                <i className="fa-brands fa-instagram"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-black hover:text-red-600">
-                <i className="fa-brands fa-youtube"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

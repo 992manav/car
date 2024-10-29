@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import Exterior from "../components/Exterior";
 import Interior from "../components/Interior";
 
 const AllParts = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [renderKey, setRenderKey] = useState(Date.now()); // Key to trigger re-render
+  const [renderKey, setRenderKey] = useState(Date.now());
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
@@ -12,16 +13,63 @@ const AllParts = () => {
 
   const handleSearchClick = () => {
     console.log("Searching for:", searchQuery);
+    setRenderKey(Date.now());
+  };
 
-    setRenderKey(Date.now()); // Update key to force re-render
+  const parentVariants = {
+    initial: {
+      opacity: 0,
+      y: 300,
+      x: 0,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        staggerChildren: 0.6,
+      },
+    },
+  };
+
+  const childVariants = {
+    initial: {
+      x: 0,
+      opacity: 0,
+    },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-red-600 to-white text-white p-6 flex flex-col items-center rounded-lg">
-      <h1 className="text-5xl font-bold text-center mb-8 text-black">
+    <motion.div
+      className="min-h-screen bg-gradient-to-r from-red-600 to-white text-white p-6 flex flex-col items-center rounded-lg"
+      initial="initial"
+      whileInView="animate"
+      variants={parentVariants}
+    >
+      {/* Title Animation */}
+      <motion.h1
+        className="text-5xl font-bold text-center mb-8 text-black"
+        variants={parentVariants}
+        whileInView="animate"
+      >
         All Parts
-      </h1>
-      <div className="flex items-center w-full max-w-md mb-8">
+      </motion.h1>
+
+      {/* Search Bar Animation */}
+      <motion.div
+        className="flex items-center w-full max-w-md mb-8"
+        variants={parentVariants}
+        initial="initial"
+        animate="animate"
+      >
         <input
           type="text"
           value={searchQuery}
@@ -29,9 +77,10 @@ const AllParts = () => {
           placeholder="Search by Car model..."
           className="flex-1 p-3 rounded-l-lg bg-black text-white text-lg"
         />
-        <button
+        <motion.button
           onClick={handleSearchClick}
           className="p-3 rounded-r-lg bg-blue-500 hover:bg-blue-600"
+          whileHover={{ scale: 1.05 }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -45,19 +94,36 @@ const AllParts = () => {
               clipRule="evenodd"
             />
           </svg>
-        </button>
-      </div>
-      <h2 className="text-lg text-center mb-6 max-w-2xl text-black">
+        </motion.button>
+      </motion.div>
+
+      {/* Description Animation */}
+      <motion.h2
+        className="text-lg text-center mb-6 max-w-2xl text-black"
+        variants={parentVariants}
+      >
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, officiis
         autem possimus maiores tenetur ullam enim expedita doloribus atque
         consectetur accusantium ipsa quidem sed. Modi nobis expedita minus
         debitis animi.
-      </h2>
-      <div className="w-full max-w-4xl space-y-6" key={renderKey}>
-        <Exterior searchQuery={searchQuery} />
-        <Interior searchQuery={searchQuery} />
-      </div>
-    </div>
+      </motion.h2>
+
+      {/* Components Animation */}
+      <motion.div
+        className="w-full max-w-4xl space-y-6"
+        key={renderKey}
+        initial="initial"
+        animate="animate"
+        variants={parentVariants}
+      >
+        <motion.div variants={childVariants}>
+          <Exterior searchQuery={searchQuery} />
+        </motion.div>
+        <motion.div variants={childVariants}>
+          <Interior searchQuery={searchQuery} />
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 

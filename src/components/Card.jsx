@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Card = ({ searchQuery, _id, type, image }) => {
   const navigate = useNavigate();

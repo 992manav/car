@@ -15,9 +15,9 @@ const Links = ({ loggedin }) => {
   const handleMouseLeaveInterior = () => setIsInteriorOpen(false);
 
   const interiorItems = [
-    { label: "Seat Cover", onClick: () => navigate("parts/seatcover") },
+    { label: "Seat Cover", onClick: () => navigate("parts/seatcovers") },
     { label: "Car Floor Mats", onClick: () => navigate("parts/mats") },
-    { label: "Speakers", onClick: () => navigate("parts/speaker") },
+    { label: "Speakers", onClick: () => navigate("parts/speakers") },
     { label: "Dashcam", onClick: () => navigate("parts/dashcam") },
   ];
 
@@ -28,7 +28,6 @@ const Links = ({ loggedin }) => {
     },
     { label: "Alloy Wheel", onClick: () => navigate("parts/alloywheels") },
     { label: "Headlight", onClick: () => navigate("parts/headlights") },
-    // { label: "Car Wraps", onClick: () => navigate("part/carwraps") },
   ];
 
   const handleNavigation = () => {
@@ -54,11 +53,11 @@ const Links = ({ loggedin }) => {
   };
 
   return (
-    <div>
-      <nav>
-        <ul className="flex space-x-6 px-5 font-roboto text-sm">
+    <div className="w-full  flex items-end justify-end">
+      <nav className=" ">
+        <ul className="flex space-x-6  font-roboto text-xs sm:text-sm ">
           <li
-            className="hover:text-gray-300 mt-8 cursor-pointer"
+            className="hover:text-gray-300 mt-8 cursor-pointer hidden md:flex"
             onClick={gotoHome}
           >
             Home
@@ -90,18 +89,18 @@ const Links = ({ loggedin }) => {
             Contact Us
           </li>
           <li
-            className=" mt-1 cursor-pointer relative rounded-full border border-gray-400 p-1 flex items-center justify-center"
+            className="mt-1 cursor-pointer relative rounded-full border border-gray-400 p-1 flex items-center justify-center"
             onClick={gotoCart}
           >
-            <i className="hover:text-white fa-solid fa-cart-shopping text-xl text-gray-300"></i>
-            <span className="absolute  mt-3  top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center">
+            <i className="hover:text-white fa-solid fa-cart-shopping text-lg sm:text-xl text-gray-300"></i>
+            <span className="absolute mt-3 top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center">
               0
             </span>
           </li>
 
           <li className="hover:text-gray-300 cursor-pointer">
             <button
-              className="bg-black mt-6 py-2 rounded-md text-sm font-medium"
+              className="bg-black mt-6 py-2 rounded-md text-xs sm:text-sm font-medium"
               onClick={handleNavigation}
             >
               Login

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Card from "./Card";
 import Preloader from "./Preloader";
 
@@ -39,10 +40,15 @@ const Exterior = ({ searchQuery }) => {
     return () => clearTimeout(); // Clean up the timeout
   }, []);
 
+  const partVariants = {
+    initial: { opacity: 0, y: -50 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  };
+
   return (
     <>
       {loading ? (
-        <div className="bg-red-400 w-[350px]   ">
+        <div className="bg-red-400 w-[350px]">
           <Preloader />
         </div>
       ) : (
@@ -55,15 +61,21 @@ const Exterior = ({ searchQuery }) => {
             {parts.map((part) => {
               if (part.where === "exterior") {
                 return (
-                  <Card
-                    searchQuery={searchQuery}
+                  <motion.div
                     key={part._id}
-                    _id={part._id}
-                    type={part.type.replace(/\b\w/g, (char) =>
-                      char.toUpperCase()
-                    )}
-                    image={part.image}
-                  />
+                    variants={partVariants}
+                    initial="initial"
+                    animate="animate"
+                  >
+                    <Card
+                      searchQuery={searchQuery}
+                      _id={part._id}
+                      type={part.type.replace(/\b\w/g, (char) =>
+                        char.toUpperCase()
+                      )}
+                      image={part.image}
+                    />
+                  </motion.div>
                 );
               }
               return null;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import Preloader from "../components/Preloader.jsx";
 import car from "../assets/car.png";
 import Navbar from "../components/Navbar"; // Import your new Navbar component
@@ -16,44 +17,53 @@ const Home = () => {
   const [loggedin, setLoggedin] = useState(false); // Adjust this state as needed
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+    <div className="bg-black text-white min-h-screen w-full">
       {/* Navbar */}
       <Navbar loggedin={loggedin} />
 
       {/* Main Section */}
       <section className="relative ">
         {/* Red and Black Split Background */}
-        <div className="flex ">
-          <div className="w-2/5 font-dm bg-red-700 flex justify-end h-screen text-[160px] tracking-widest pt-2">
+        <div className="flex min-h-96">
+          <div className="w-3/5 font-dm bg-red-700 flex justify-end  text-9xl tracking-widest pt-2">
             Aut
           </div>
-          <div className="w-3/5 font-dm bg-black flex justify-start h-screen text-[160px] text-white tracking-widest pt-2">
+          <div className="w-4/5 font-dm bg-black flex justify-start text-9xl w-full text-white tracking-widest pt-2">
             oShow
           </div>
         </div>
 
         {/* Car Image */}
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/4 w-full max-w-4xl z-10">
+        <motion.div
+          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/4 w-full max-w-4xl z-10"
+          initial={{ x: "100%", y: "80%", scale: 0.5 }}
+          animate={{ x: "-50%", y: "26%", scale: 0.9 }}
+          whileInView={{ scale: 1.1 }} // Scale up when in view
+          transition={{ duration: 1, delay: 0.5 }} // Main transition settings
+          // Optional: Scale up on hover
+        >
           <img src={car} alt="Car" className="w-full object-cover -mb-24" />
-        </div>
+        </motion.div>
       </section>
       <section className="w-full">
         <MainContent />
       </section>
       <div className="fixed bottom-0 right-0 flex">
-        <img
+        <motion.img
           src={brake}
           alt="Brake"
-          className="w-18 h-28 mr-6 object-cover bg-transparent z-60 transition-transform duration-1000 cursor-pointer"
+          className="w-18 h-28 mr-6 object-cover bg-transparent z-100 transition-transform duration-100 cursor-pointer"
           onClick={() => window.scrollBy({ top: 300, behavior: "smooth" })}
+          whileHover={{ scale: 0.8 }} // Scale up on hover
         />
-        <img
+        <motion.img
           src={accelarator}
           alt="Accelerator"
-          className="w-18 h-28 mr-6 object-cover bg-transparent z-60 transition-transform duration-1000 cursor-pointer"
+          className="w-18 h-28 mr-6 object-cover bg-transparent z-100 transition-transform duration-100 cursor-pointer"
           onClickCapture={() =>
             window.scrollBy({ top: -300, behavior: "smooth" })
           }
+          whileHover={{ scale: 0.8 }} // Scale up on hover
         />
       </div>
       <section>

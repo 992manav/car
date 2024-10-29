@@ -1,11 +1,12 @@
 import React from "react";
 import CountUp from "react-countup";
+import { motion } from "framer-motion";
 
 const KnowMore = () => {
   const Counter = ({ target, duration, suffix, title }) => {
     return (
       <div className="cdhl_counter_wrapper">
-        <div
+        <motion.div
           className="counter clearfix counter-style-5"
           style={{
             "--icon_color": "#db2d2e",
@@ -13,6 +14,9 @@ const KnowMore = () => {
             "--label_color": "#FFFFFF",
             "--counter_color": "#FFFFFF",
           }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
         >
           <div className="content">
             <CountUp end={target} duration={duration} suffix={suffix}>
@@ -22,7 +26,7 @@ const KnowMore = () => {
             </CountUp>
             <h6 className="counter-title">{title}</h6>
           </div>
-        </div>
+        </motion.div>
       </div>
     );
   };
@@ -30,12 +34,17 @@ const KnowMore = () => {
   return (
     <div className="text-white relative">
       <img
-        src="https://mrwallpaper.com/images/hd/full-hd-car-black-lamborghini-tahul7hyi0cfet43.jpg"
+        src="https://media.gettyimages.com/id/1315917002/photo/generic-modern-villa-with-swimming-pool-and-generic-sports-car.jpg?s=1024x1024&w=gi&k=20&c=4PZ6NSRBhiWGECDQK7W6uBhB8Ll9-vjDdPGJ1O8ADO4="
         alt="A black Lamborghini"
         className="w-full h-screen object-cover"
       />
       <div className="container mx-auto md:mx-10 top-10 absolute z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between bg-red-500 hover:bg-red-600 text-white font-bold py-8 px-6 md:px-16 rounded mt-4">
+        <motion.div
+          className="flex flex-col md:flex-row items-center justify-between bg-red-500 hover:bg-red-600 text-white font-bold py-8 px-6 md:px-16 rounded mt-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <Counter
             target={3968}
             duration={10}
@@ -55,10 +64,15 @@ const KnowMore = () => {
             title="Satisfied Clients"
           />
           <Counter target={150} duration={1} suffix="+" title="Dealer Review" />
-        </div>
-        <h3 className="elementor-heading-title elementor-size-default text-2xl md:text-3xl font-bold text-white mb-6 mt-10 text-center">
+        </motion.div>
+        <motion.h3
+          className="elementor-heading-title elementor-size-default text-2xl md:text-3xl font-bold text-black mb-2 mt-10 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           Want To Know More?
-        </h3>
+        </motion.h3>
       </div>
     </div>
   );
