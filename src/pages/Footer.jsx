@@ -23,7 +23,17 @@ const Footer = () => {
               <span className="absolute left-0 bottom-[-10px] bg-red-500 h-0.5 w-12 transition-all duration-300 group-hover:w-24"></span>
             </h4>
             <ul>
-              {["Tyre", "Alloy Wheel", "Headlight"].map((item) => (
+              {[
+                "Tyre",
+                "Alloy Wheel",
+                "Headlight",
+                "Car Cover",
+                "Car Wrap",
+                "Windshield",
+                "Windshield Washer Fluid",
+                "Front Bumper",
+                "Rear Bumper",
+              ].map((item) => (
                 <li key={item} className="mb-3 cursor-pointer">
                   <a
                     href={`${item.toLowerCase().replace(" ", "")}.html`}
@@ -43,7 +53,19 @@ const Footer = () => {
               <span className="absolute left-0 bottom-[-10px] bg-red-500 h-0.5 w-12 transition-all duration-300 group-hover:w-24"></span>
             </h4>
             <ul>
-              {["Seat Cover", "Car Floor-Mats", "Speakers"].map((item) => (
+              {[
+                "Seat Cover",
+                "Car Floor-Mats",
+                "Speakers",
+                "Steering Covers",
+                "Mats",
+                "Arm Rests",
+                "Headrests",
+                "Car Batteries",
+                "Dash Cam",
+                "First Aid Kits",
+                "Catalytic Converters",
+              ].map((item) => (
                 <li key={item} className="mb-3 cursor-pointer">
                   <a
                     href={`${item.toLowerCase().replace(" ", "")}.html`}
