@@ -25,10 +25,16 @@ const Home = () => {
       <section className="relative ">
         {/* Red and Black Split Background */}
         <div className="flex min-h-96">
-          <div className="w-3/5 font-dm bg-red-700 flex justify-end  text-9xl tracking-widest pt-2">
+          <div
+            className="w-3/5 font-roboto bg-red-700 flex justify-end text-9xl tracking-widest pt-2"
+            style={{ textShadow: "4px 4px 8px rgba(0, 0, 0, 0.7)" }}
+          >
             Aut
           </div>
-          <div className="w-4/5 font-dm bg-black flex justify-start text-9xl w-full text-white tracking-widest pt-2">
+          <div
+            className="w-4/5 font-roboto bg-black flex justify-start text-9xl w-full text-white tracking-widest pt-2"
+            style={{ textShadow: "4px 4px 8px rgba(0, 0, 0, 0.7)" }}
+          >
             oShow
           </div>
         </div>
@@ -39,7 +45,7 @@ const Home = () => {
           initial={{ x: "100%", y: "80%", scale: 0.5 }}
           animate={{ x: "-50%", y: "26%", scale: 0.9 }}
           whileInView={{ scale: 1.01 }} // Scale up when in view
-          transition={{ duration: 1, delay: 0.5 }} // Main transition settings
+          transition={{ duration: 1, delay: 0.2 }} // Main transition settings
           // Optional: Scale up on hover
         >
           <img src={car} alt="Car" className="w-full object-cover -mb-24" />

@@ -12,6 +12,9 @@ export default {
       colors: {
         aliceblue: "#F0F8FF", // Exact color code for aliceblue
       },
+      boxShadow: {
+        "text-md": "2px 2px 4px rgba(0, 0, 0, 0.5)",
+      },
     },
   },
   plugins: [],
