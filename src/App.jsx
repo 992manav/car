@@ -13,6 +13,8 @@ import Cart from "./pages/Cart.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Detail from "./components/Detail.jsx";
 import Navbar2 from "./components/Navbar2.jsx";
+import AddCar from "./pages/SellCar.jsx";
+import SellCar from "./pages/SellCar.jsx";
 
 // Custom Navbar component based on the route
 const ConditionalNavbar = () => {
@@ -41,6 +43,7 @@ function App() {
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/detail" element={<Detail />} />
+          <Route path="/sellcar" element={<SellCar />} />
         </Routes>
         <Footer />
       </BrowserRouter>

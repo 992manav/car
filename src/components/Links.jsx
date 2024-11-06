@@ -69,6 +69,10 @@ const Links = ({ loggedin }) => {
     navigate("/");
   };
 
+  const gotoAddCar = () => {
+    navigate("/sellcar");
+  };
+
   return (
     <div className="w-full  flex items-end justify-end">
       <nav className=" ">
@@ -106,7 +110,7 @@ const Links = ({ loggedin }) => {
             Contact Us
           </li>
           <li
-            className="mt-1 cursor-pointer relative rounded-full border border-gray-400 p-1 flex items-center justify-center"
+            className="mt-3 cursor-pointer relative rounded-full border border-gray-400 p-1 flex items-center justify-center"
             onClick={gotoCart}
           >
             <i className="hover:text-white fa-solid fa-cart-shopping text-lg sm:text-xl text-gray-300"></i>
@@ -114,10 +118,15 @@ const Links = ({ loggedin }) => {
               0
             </span>
           </li>
-
+          <li
+            className="hover:text-gray-300 mt-8 cursor-pointer"
+            onClick={gotoAddCar}
+          >
+            Sell Car
+          </li>
           <li className="hover:text-gray-300 cursor-pointer">
             <button
-              className="bg-black mt-5 py-2 rounded-md text-xs sm:text-sm font-medium mr-1"
+              className=" mt-6 py-2 rounded-md text-xs sm:text-sm font-medium mr-1"
               onClick={handleNavigation}
             >
               Login
