@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"; // Import useHistory
 import Preloader from "./Preloader";
 import PartCard from "./PartCard"; // Import the new PartCard component
+import { useNavigate } from "react-router-dom";
 
 const Part = () => {
   const { types, model } = useParams(); // Extract both types and model from URL parameters
-
+  const navigate = useNavigate();
   const [partData, setPartData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -47,8 +48,8 @@ const Part = () => {
   return (
     <div className="min-h-screen text-white p-6 flex flex-col items-center bg-gray-400 w-screen">
       <button
-        // Go back to the previous page
-        className="mt-4 p-2 bg-pink-500 text-white rounded"
+        onClick={() => navigate(-1)} // Go back to the previous page
+        className="mt-4 p-2 bg-red-500 text-white rounded"
       >
         Go Back
       </button>
@@ -59,7 +60,7 @@ const Part = () => {
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 w-full max-w-screen-lg">
           {model
             ? partData.map((part) => {
-                if (part.model === model) {
+                if (part.model === model || part.model == "universal") {
                   return <PartCard key={part._id} part={part} />;
                 }
                 return null; // Return null if the model doesn't match

@@ -15,10 +15,22 @@ const Links = ({ loggedin }) => {
   const handleMouseLeaveInterior = () => setIsInteriorOpen(false);
 
   const interiorItems = [
-    { label: "Seat Cover", onClick: () => navigate("parts/seatcovers") },
-    { label: "Car Floor Mats", onClick: () => navigate("parts/mats") },
     { label: "Speakers", onClick: () => navigate("parts/speakers") },
-    { label: "Dashcam", onClick: () => navigate("parts/dashcam") },
+    {
+      label: "Steering Covers",
+      onClick: () => navigate("parts/steeringcovers"),
+    },
+    { label: "Mats", onClick: () => navigate("parts/mats") },
+    { label: "Seat Covers", onClick: () => navigate("parts/seatcovers") },
+    { label: "Arm Rests", onClick: () => navigate("parts/armrests") },
+    { label: "Headrests", onClick: () => navigate("parts/headrests") },
+    { label: "Car Batteries", onClick: () => navigate("parts/carbatteries") },
+    { label: "Dash Cam", onClick: () => navigate("parts/dashcams") },
+    { label: "First Aid Kits", onClick: () => navigate("parts/firstaidkits") },
+    {
+      label: "Catalytic Converters",
+      onClick: () => navigate("parts/catalyticconverters"),
+    },
   ];
 
   const exteriorItems = [
@@ -28,6 +40,11 @@ const Links = ({ loggedin }) => {
     },
     { label: "Alloy Wheel", onClick: () => navigate("parts/alloywheels") },
     { label: "Headlight", onClick: () => navigate("parts/headlights") },
+    { label: "Car Covers", onClick: () => navigate("parts/carcovers") },
+    { label: "Windshields", onClick: () => navigate("parts/Windshields") },
+    { label: "Car Wraps", onClick: () => navigate("parts/carwraps") },
+    { label: "Front Bumpers", onClick: () => navigate("parts/frontbumpers") },
+    { label: "Rear Bumpers", onClick: () => navigate("parts/rearbumpers") },
   ];
 
   const handleNavigation = () => {
@@ -55,7 +72,7 @@ const Links = ({ loggedin }) => {
   return (
     <div className="w-full  flex items-end justify-end">
       <nav className=" ">
-        <ul className="flex space-x-6  font-roboto text-xs sm:text-sm ">
+        <ul className="flex space-x-6  font-roboto text-xs sm:text-sm mr-8">
           <li
             className="hover:text-gray-300 mt-8 cursor-pointer hidden md:flex"
             onClick={gotoHome}
@@ -100,7 +117,7 @@ const Links = ({ loggedin }) => {
 
           <li className="hover:text-gray-300 cursor-pointer">
             <button
-              className="bg-black mt-6 py-2 rounded-md text-xs sm:text-sm font-medium"
+              className="bg-black mt-5 py-2 rounded-md text-xs sm:text-sm font-medium mr-1"
               onClick={handleNavigation}
             >
               Login

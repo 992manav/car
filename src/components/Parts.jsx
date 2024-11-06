@@ -50,7 +50,7 @@ const Parts = () => {
   }
 
   return (
-    <div className="min-h-screen text-white p-6 flex flex-col items-center bg-gray-400 w-full">
+    <div className="min-h-screen text-white p-6 flex flex-col items-center bg-white w-full">
       <h1 className="text-4xl font-bold mb-4 text-black">
         {types.toUpperCase()}
       </h1>

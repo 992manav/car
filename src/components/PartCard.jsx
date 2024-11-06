@@ -36,14 +36,15 @@ const PartCard = ({ part }) => {
           </span>
           <span className="text-2xl">₹{part.price}</span>
         </div>
+        <div className="bg-[aliceblue]">
+          <p className=" text-lg mx-4 mt-4 mb-3 text-red-500">
+            Model: {part.model.toUpperCase()}
+          </p>
 
-        <p className="bg-aliceblue text-lg mx-4 mt-4 mb-3 text-red-500">
-          Model: {part.model.toUpperCase()}
-        </p>
-
-        <h2 className="bg-aliceblue text-xl text-black font-semibold mx-4 tracking-wide">
-          {part.name}
-        </h2>
+          <h2 className="bg-aliceblue text-xl text-black font-semibold mx-4 tracking-wide">
+            {part.name}
+          </h2>
+        </div>
       </div>
     </div>
   );
