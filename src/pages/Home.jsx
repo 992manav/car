@@ -12,6 +12,7 @@ import ServiceSection from "../components/ServiceSection";
 import PartnersSection from "../components/PartersSection";
 import KnowMore from "../components/KnowMore";
 import AllParts from "./AllParts.jsx";
+import Featured from "../components/Featured.jsx";
 const Home = () => {
   const navigate = useNavigate();
   const [loggedin, setLoggedin] = useState(false); // Adjust this state as needed
@@ -77,6 +78,9 @@ const Home = () => {
       </section>
       <section id="allparts">
         <AllParts />
+      </section>
+      <section>
+        <Featured />
       </section>
       <section>
         <PartnersSection />

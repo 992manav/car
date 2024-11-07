@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMW_Z4</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://kit.fontawesome.com/32599b4c15.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            color: white;
+            /* Change font color to white */
+            background-color: black;
+            /* Change background color to black */
+        }
+
+        .tab-pane {
+            padding: 40px;
+            /* Add padding to tab content */
+        }
+
+        .nav-link {
+            color: white;
+            /* Change the color of non-active tabs to white */
+        }
+
+        .nav-link.active {
+            color: black;
+            /* Change the color of the active tab back to black */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="navbar">
+          <div class="logo">
+            <a href="index.html"> <img src="./logo.png" alt=""></a>
+          </div>
+         
+    
+        </div>
+      </div>
+    <header>
+        <!-- Corousal Start -->
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="3" aria-current="true"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="4" aria-current="true"
+                    aria-label="Slide 5"></button>
+
+            </div>
+            <div class="carousel-inner carousel-img-size">
+                <div class="carousel-item active " data-bs-interval="3000">
+                    <img src="BMW Z4/0.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Slide 1</h5> -->
+                    <!-- <p>Description of slide 1.</p> -->
+                    <button class="btn btn-light">Buy Now</button>
+                </div>
+                <div class="carousel-item">
+                    <img src="BMW Z4/mountain.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Slide 1</h5> -->
+                    <!-- <p>Description of slide 1.</p> -->
+                    <button class="btn btn-light">Buy Now</button>
+                </div>
+                <div class="carousel-item">
+                    <img src="BMW Z4/interior.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Slide 1</h5> -->
+                    <!-- <p>Description of slide 1.</p> -->
+                    <button class="btn btn-light">Buy Now</button>
+                </div>
+                <div class="carousel-item">
+                    <img src="BMW Z4/side.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Slide 1</h5> -->
+                    <!-- <p>Description of slide 1.</p> -->
+                    <button class="btn btn-light">Buy Now</button>
+                </div>
+                <div class="carousel-item">
+                    <img src="BMW Z4/streeing.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <!-- <h5>Slide 1</h5> -->
+                    <!-- <p>Description of slide 1.</p> -->
+                    <button class="btn btn-light">Buy Now</button>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <!-- Corousal End -->
+    </header>
+    <!-- Tab Start -->
+    <div class="row">
+        <div class="col">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#engine">Engine</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#dimension">Dimension</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#suspension">Suspension Brakes and Wheels</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#Interior">Interior</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#Exterior">Exterior</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="engine">
+                    <h3>Engine Details</h3>
+                    <ul>
+                        <li>
+                            <h4>TwinPower Turbo 6-cylinder</h4>
+                            <ul>
+                                <li>
+                                    <div class="point-box"></div>
+                                    <div class="point-description">
+                                        <p>Displacement: 2998cc</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="point-box"></div>
+                                    <div class="point-description">
+                                        <p>Max Power: 335bhp@5000-6500rpm</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="point-box"></div>
+                                    <div class="point-description">
+                                        <p>Max Torque: 500Nm@1600-4500rpm</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="point-box"></div>
+                                    <div class="point-description">
+                                        <p>No. of Cylinders: 6</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="point-box"></div>
+                                    <div class="point-description">
+                                        <p>Valves Per Cylinder: 4</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="point-box"></div>
+                                    <div class="point-description">
+                                        <p>Turbo Charger: Twin</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="point-box"></div>
+                                    <div class="point-description">
+                                        <p>Gear Box: 8-Speed Steptronic</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="point-box"></div>
+                                    <div class="point-description">
+                                        <p>Drive Type: RWD</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>Fuel & Performance</h4>
+                            <ul>
+                                <li>
+                                    <div class="point-box"></div>
+                                    <div class="point-description">
+                                        <p>Fuel Type: Petrol</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="point-box"></div>
+                                    <div class="point-description">
+                                        <p>Petrol Fuel Tank Capacity: 52 Litres</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="point-box"></div>
+                                    <div class="point-description">
+                                        <p>Emission Norm Compliance: BS VI 2.0</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="point-box"></div>
+                                    <div class="point-description">
+                                        <p>Top Speed: 250 kmph</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- Engine details -->
+                </div>
+                <div class="tab-pane fade" id="dimension">
+                    <h3>Dimension Details</h3>
+                    <ul>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Length (mm): 4324</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Width (mm): 2024</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Height (mm): 1304</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Wheelbase (mm): 2740</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Front Track (mm): 1473</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Rear Track (mm): 1616</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Seating Capacity: 2
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Kerb Weight: 1610 Kg</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Gross Weight: 1860 Kg</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Dimension details -->
+                </div>
+                <div class="tab-pane fade" id="suspension">
+                    <h3>Suspension, Brakes, and Wheels</h3>
+                    <ul>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Front Suspension: Adaptive M suspension</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Rear Suspension: Adaptive M suspension</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Acceleration: 4.5</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>0-100kmph: 4.5</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Front Brakes: 325mm Disc</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Suspension, Brakes, and Wheels details -->
+                </div>
+                <div class="tab-pane fade" id="Interior">
+                    <h4>Interior</h4>
+                    <ul>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Tachometer</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Electronic Multi-Tripmeter</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Leather Seats</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Leather Steering Wheel</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Glove Compartment</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Digital Clock</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Digital Odometer</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Driving Experience Control Eco</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Capability details -->
+                </div>
+                <div class="tab-pane fade" id="Exterior">
+
+                    <h4>Exterior</h4>
+                    <ul>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Adjustable Headlights</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Power Adjustable Exterior Rear View Mirror</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Electric Folding Rear View Mirror</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Alloy Wheels</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Outside Rear View Mirror Turn Indicators</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Intergrated Antenna</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <h4>Additional Features</h4>
+                    <ul>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Trunk Opener: Smart</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Tyre Size: 255/35 ZR19</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Tyre Type: Radial, Run flat</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>LED DRLs</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>LLED Headlights</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>LED Headlights</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <h4>Safety</h4>
+                    <ul>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Anti-Lock Braking System</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Brake Assist</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Central Locking</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Anti-Theft Alarm</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>No. of Airbags: 4</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Day & Night Rear View Mirror</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Seat Belt Warning</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Door Ajar Warning</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Traction Control</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Tyre Pressure Monitor</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>Engine Immobilizer</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="point-box"></div>
+                            <div class="point-description">
+                                <p>ADAS</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Transmission details -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tab End -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

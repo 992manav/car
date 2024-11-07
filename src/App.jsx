@@ -15,6 +15,7 @@ import Detail from "./components/Detail.jsx";
 import Navbar2 from "./components/Navbar2.jsx";
 import AddCar from "./pages/SellCar.jsx";
 import SellCar from "./pages/SellCar.jsx";
+import CarDetail from "./components/CarDetail.jsx";
 
 // Custom Navbar component based on the route
 const ConditionalNavbar = () => {
